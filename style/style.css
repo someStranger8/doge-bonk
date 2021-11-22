@@ -1,0 +1,52 @@
+#bonk {
+  max-width: 25vw; max-height: 25vh;
+}
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+  #bonk {
+    max-width: 50vw; max-height: 25vh;
+  }
+}
+
+#bonk #bat {
+  transition: all 0.05s;
+  transform-origin: 0% 100%;
+}
+
+img {
+  pointer-events: none;
+}
+
+#bonk:not(.bonking) #bat {
+  transform: rotate(-54deg);
+}
+#bonk.bonking #bat {
+  transform: rotate(12deg);
+}
+#bonk.bonking #shib {
+  transition: all 0.05s;
+  transition-delay: 0.025s;
+  transform: scaleY(0.8) translate(0%, 25%);
+}
+.bonkeffect {
+  animation: bonk_keyframes 0.5s cubic-bezier(0.5, 1, 0.89, 1)
+}
+
+@keyframes bonk_keyframes {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(80%)
+  }
+  to {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(120%)
+  }
+}
+
+.link {
+  color: #cfac39
+}
+
+.link:hover {
+  color: #d9bd62
+}
